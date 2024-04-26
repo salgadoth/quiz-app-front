@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ResponsiveAppBar from './components/AppBar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ResponsiveAppBar />
+    <div style={{padding: '0px 12em 0px 12em'}}>
+      <App />
+    </div>
   </React.StrictMode>
 );
 
