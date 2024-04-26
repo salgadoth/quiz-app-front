@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Paper, Typography, FormControlLabel, Checkbox, Radio, FormControl, Box, RadioGroup, Button, CircularProgress } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { UserClaims } from '../data/models/UserClaims';
@@ -31,7 +31,6 @@ export interface QuizTableProps {
 const QuizTable = (props: QuizTableProps) => {
   const [singleAnswer, setSingleAnswer] = useState<number>(0)
   const [checked, setChecked] = useState([true, false]);
-  const {categoryName, quizId} = useParams()
   const [loading, setLoading] = useState<boolean>(false)
   const [submitted, setSubmitted] = useState<boolean>(false)
   

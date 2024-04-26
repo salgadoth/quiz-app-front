@@ -45,7 +45,7 @@ const Dashboard = () => {
             }
             fetch()
         }
-    }, [])
+    }, [prcAnswers, totalAnswers, recentAnswers, token])
 
     if(tokenClaims)
         return(

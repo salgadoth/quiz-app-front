@@ -9,7 +9,6 @@ import CardsTable from "../../components/CardsTable";
 
 const Category = () => {
     const [quizData, setQuizData] = useState<any>([])
-    const [quizId, setQuizId] = useState<Number | null>(null)
     const [tokenClaims, setTokenClaims] = useState<any>()
     const [formState, setFormState] = useState<Boolean>(false)
     
@@ -27,12 +26,6 @@ const Category = () => {
         const fetchData = async () => {
             const response = await axios.get("http://localhost:8000/api/category/" + categoryName)
             if(response.status === HttpStatusCode.Ok){
-                if(!(response.data instanceof Array)){
-                    setQuizId(response.data.id)
-                }
-                if(response.data.length >= 0){
-                    setQuizId(response.data.at(0).category_id)
-                }
                 setQuizData(response.data)
             }
         }
@@ -40,7 +33,7 @@ const Category = () => {
         
         const tokenData = Auth.getClaims()
         setTokenClaims(tokenData)
-    }, [])
+    }, [categoryName])
 
     return(
         <>
